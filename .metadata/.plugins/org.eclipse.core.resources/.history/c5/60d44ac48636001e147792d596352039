@@ -1,0 +1,30 @@
+import java.util.*;
+public class Link {
+	public static void main(String[] args)
+	{
+	Solution s=new Solution();
+	              
+	Scanner sc=new Scanner(System.in);	
+	int[] str= {3,2,2,3};
+	System.out.println(s.isHappy(19));
+    }
+}
+class Solution {
+    public boolean isHappy(int n) {
+        int rem = 0;
+        int total=0;
+        while(total!=1)
+        {total=0;
+
+       while(n!=0)
+       {
+           rem=n%10;
+           total+=rem^2;
+           n/=10;
+
+        }
+       n=total;
+       } 
+        return true;
+    }
+}

@@ -1,0 +1,61 @@
+import java.util.*;
+
+
+public class Link {
+	public static void main(String[] args)
+	
+	
+	{
+	Solution s=new Solution();
+	              
+	Scanner sc=new Scanner(System.in);	
+	int[] str= {-1,0,1,2,-1,4};
+	System.out.println(s.countAndSay(6));
+    }
+}
+
+class Solution {
+    public String countAndSay(int n) {
+    	String ans="";
+       List<String> list=new ArrayList<>();
+       list.add("1");
+       int i=1;
+    while(i<n)
+    {String total = "";
+    	String strSize=list.get(list.size()-1);
+    	int count=0;
+    	for(int j=0;j<strSize.length();j++)
+    	{
+    	
+    		if(strSize.length()-1!=j)
+    		{
+    		if(strSize.charAt(j)==strSize.charAt(j+1))
+    		{
+    			count+=1;
+    			continue;
+    			
+    		}}
+    		if(strSize.length()-1!=j)
+    		{
+    		if(strSize.charAt(j)!=strSize.charAt(j+1))
+    		{count+=1;
+    			total+=""+count+strSize.charAt(j);
+    			count=1;
+    		}}
+    		if(strSize.length()-1==j)
+    		{
+    			count+=1;
+    			total+=""+count+strSize.charAt(j);
+    		}
+    		
+    	
+    	}
+    	i++;
+    	list.add(total);
+    }
+    ans=list.get(list.size()-1);
+    System.out.println(ans);
+    
+       return ans;
+    }
+}

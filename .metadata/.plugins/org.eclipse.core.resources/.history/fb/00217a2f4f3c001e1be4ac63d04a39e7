@@ -1,0 +1,32 @@
+package solveNQueens;
+import java.util.*;
+public class solveNQueens {
+	public static void main(String[] args)
+	{
+		int[] nums= {1,2,3};
+		Solution s=new Solution();
+		List<List<Integer>> listTotal=new ArrayList<>();
+		s.combination( listTotal, new ArrayList<>(), nums, 0);
+		System.out.println(listTotal);
+		
+	}
+	
+	
+}
+class Solution{
+	public void combination(List<List<Integer>> ListTotal,List<Integer> list,int[] nums,int start)
+	{
+		if(start>=nums.length)
+		{
+			return;
+		}
+		for(int i=start;i<nums.length;i++)
+		{
+			list.add(nums[i]);
+			ListTotal.add(new ArrayList<>(list));
+			combination(ListTotal,list,nums,start+1);
+			list.remove(list.size()-1);
+		}
+	
+	}
+}

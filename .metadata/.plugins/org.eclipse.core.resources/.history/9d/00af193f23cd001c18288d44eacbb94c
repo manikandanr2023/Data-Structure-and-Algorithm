@@ -1,0 +1,27 @@
+package hello;
+import java.util.*;
+public class Main{
+	public static void main(String[] args)
+	{
+	Scanner sc=new Scanner(System.in);
+	int[][] a= {{1,4,5},{1,3,4},{2,6}};
+	List<Integer> li=new ArrayList<>();
+	List<Integer> li2=new ArrayList<>();
+	List<List<Integer>> li1;
+	for(int i=0;i<a.length;i++)
+		{
+		for(int j=0;j<a[i].length;j++)
+			{
+			
+			li.add(a[i][j]);
+			
+			}
+		     li1=new ArrayList<>(li);
+		
+	
+		
+	
+			}
+	System.out.println(li1);
+		}
+}

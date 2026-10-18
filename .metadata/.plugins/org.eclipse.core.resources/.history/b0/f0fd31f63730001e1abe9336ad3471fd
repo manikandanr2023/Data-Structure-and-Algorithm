@@ -1,0 +1,41 @@
+import java.util.*;
+
+
+public class Link {
+	public static void main(String[] args)
+	
+	
+	{
+	Solution s=new Solution();
+	String a="abcabcbb";
+	System.out.println(s.lengthOfLongestSubstring(a));
+    }
+}
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+    	int start=0;
+    	int i=0;
+    	int max=0;
+    	int[] chararr=new int[26];
+    	while(i<s.length())
+    	{
+    		int charsize=s.charAt(i);
+    		chararr[charsize-'a']++;
+    		if(chararr[charsize-'a']>1)
+    		{
+    			int charsize1=s.charAt(i);
+    			chararr[charsize-'a']--;
+    			start++;
+    		}
+    		int msize=i-start+1;
+    		max=Math.max(max,msize);
+    		
+    		i++;
+    	}
+    	
+    	
+    	
+    	
+    	return max;
+}
+}

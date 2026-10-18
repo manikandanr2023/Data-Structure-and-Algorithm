@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main {
+	public static void main(String args[])
+	{
+		List<Character> li1=new ArrayList<>();
+		li1.add('R');
+		li1.add('A');
+		li1.add('C');
+		li1.add('E');
+		li1.add('C');
+		li1.add('A');
+		li1.add('R');
+		List<Character> li2=new ArrayList<>();
+		System.out.println(li1);
+		for(int i=li1.size()-2;i>=0;i--)
+		{
+//			li2.add(li2.remove(i));
+			System.out.println(i);
+		}
+//		if(li1.equals(li2))
+//		{
+//			System.out.println("True");
+//		}
+//		else {
+//			System.out.println("False");
+//		}
+	}
+
+}

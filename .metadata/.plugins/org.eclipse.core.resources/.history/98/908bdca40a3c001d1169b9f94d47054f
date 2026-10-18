@@ -1,0 +1,7 @@
+public class Store{
+	static Map<Integer,Account_Details> cd
+	private static void createaccount(Account_Details ad) {
+		// TODO Auto-generated method stub
+		
+	}
+	}

@@ -1,0 +1,40 @@
+package problem;
+import java.util.*;
+public class problem {
+
+	public static void main(String[] args)
+	{
+		int[] nums= {187,470,25,436,538,809,441,167,477,110,275,133,666,345,411,459,490,266,987,965,429,166,809,340,467,318,125,165,809,610,31,585,970,306,42,189,169,743,78,810,70,382,367,490,787,670,476,278,775,673,299,19,893,817,971,458,409,886,434};
+		ss sc=new ss();
+		
+		System.out.println(sc.maximumUniqueSubarray(nums));
+	}
+}
+class ss {
+    public int maximumUniqueSubarray(int[] nums) {
+    	 int start =0;
+         int result=0;
+         int sum=0;
+         HashMap<Integer,Integer> map = new HashMap<>();
+         for(int end =0 ;end<nums.length;end++)
+         {
+          if(!map.containsKey(nums[end]))
+          {
+              map.put(nums[end],end);
+              sum+=nums[end];
+          }
+          else{
+              while(nums[start]!=nums[end])
+              {
+            	   sum-=nums[(int)map.remove(nums[start])];
+                  start++;
+              }
+              start++;
+            
+          }
+          map.put(nums[end],end);
+          result=Math.max(result,sum);
+         }
+         return result;
+    }
+}

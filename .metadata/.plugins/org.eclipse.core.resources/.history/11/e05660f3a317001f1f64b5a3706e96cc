@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main {
+public static void main(String args[])
+{
+	int[][] matrix=new int[][] {{1,2,3,2,4,5},{4,5,6,5,3,4},{7,8,9,2,4,2},{7,8,9,2,4,2},{7,8,9,2,4,2},{7,8,9,2,4,2}};
+	 int n=matrix.length,first,last,top,offset;
+	    for(int layer=0;layer<n/2;layer++)
+	    {
+	        first=layer;
+	        last=n-1-layer;
+	        for(int i=first;i<last;i++)
+	        {
+	            offset=i-first;
+	            top=matrix[first][i];
+	            matrix[first][i]=matrix[last-offset][first];
+	            matrix[last-offset][first]=matrix[last][last-offset];
+	            matrix[last][last-offset]=matrix[i][last];
+	            matrix[i][last]=top;
+	            
+	            
+	        }
+	        
+	    }
+	    System.out.print(Arrays.deepToString(matrix));
+}
+}

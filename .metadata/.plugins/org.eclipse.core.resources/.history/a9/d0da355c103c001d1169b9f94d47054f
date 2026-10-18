@@ -1,0 +1,72 @@
+import java.util.*;
+public class Bank {
+static String accno,pin,name,mob,aadhaar,branch,emailid,gender,pincode;
+static String admin,user;
+static int admin_id,admin_password;
+static String admin_name,admin_age,admin_gender,admin_mobno,admin_branch,admin_mail;
+static Map<Integer,Create_admin_details> store_admin_details=new HashMap<>();
+	public static void main(String args[])
+	{}
+	public void display() {
+		Scanner sc=new Scanner(System.in);
+	  System.out.println("Welcome to Zoho Bank");
+	  System.out.println("Choose  Your Option \n 1.Admin\n 2.User");
+	  int welcome=sc.nextInt();
+	  int sisu;
+	 
+	  switch(welcome)
+	  {
+	  
+	  
+	  case 1:
+		  System.out.println("1.Signin \n 2.Signup");
+		  sisu=sc.nextInt();
+		  if(sisu==1)
+		  {
+			  System.out.println("Enter your Id");
+			  admin_id=sc.nextInt();
+			  System.out.println("Enter your Password");
+			  admin_password=sc.nextInt();
+			  Admin.login(admin_id, admin_password);
+		  }
+		  if(sisu==2)
+		  {
+			  System.out.println("Enter your Name");
+			  admin_name=sc.next();
+			  System.out.println("Enter Your age");
+			  admin_age=sc.next();
+			  System.out.println("Enter Your gender");
+			  admin_gender=sc.next();
+			  System.out.println("Enter Your mail");
+			  admin_mail=sc.next();
+			  System.out.println("Enter your mobile No");
+			  admin_mobno=sc.next();
+			  System.out.println("Enter your Branch");
+			  admin_branch=sc.next();
+			  Create_admin_details cad=new Create_admin_details(admin_name,admin_age,admin_gender,admin_mail,admin_mobno,admin_branch);
+			  create_admin(cad);
+		  }
+		  
+	 
+	  }
+	
+	  
+	}
+  public static void create_admin(Create_admin_details cad) {
+		store_admin_details.put(cad.admin_id,cad);
+		System.out.println("Admin id:"+cad.admin_id);
+		System.out.println("Admin password: "+cad.admin_password);
+		System.out.println("Admin Created Successfully");
+		System.out.println("Login");
+		System.out.println("Enter admin_id");
+		Scanner sc =new Scanner(System.in);
+		admin_id=sc.nextInt();
+		System.out.println("Enter admin_password");
+		admin_password=sc.nextInt();
+	    Admin.login(admin_id, admin_password);
+		
+		
+	}
+
+
+}

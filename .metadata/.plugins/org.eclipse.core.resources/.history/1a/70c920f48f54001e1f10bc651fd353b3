@@ -1,0 +1,14 @@
+package round5;
+import java.util.*;
+import java.util.Map.Entry;
+public class combination {
+	public static void main(String args[])
+	{
+		String a="manikandan";
+		String b="manikandan";
+	if(b.equals(a))
+	{
+		System.out.println(a.substring(1,4));
+	}
+	}
+}

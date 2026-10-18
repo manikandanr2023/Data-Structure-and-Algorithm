@@ -1,0 +1,103 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class Admin {
+	static Map<Integer,Account_Details> mapaccount=new HashMap<>();
+	static String name,mobileno,emailid,branch,pincode,gender;
+	static int user_accno=0;
+	static int amount=0;
+	static int deleteaccno;
+public static void login(int admin_id,int admin_password)
+{Scanner sc=new Scanner(System.in);
+boolean check=true;
+Bank b=new Bank();
+
+if(b.store_admin_details.containsKey(admin_id))
+	
+{
+	System.out.println(b.store_admin_details.get(admin_id));
+	System.out.println(b.store_admin_details.containsKey(admin_id));
+
+while(check)	
+{
+		System.out.println("1.Create Account\n 2.Delete Account \n 3.Update Account \n4.List Account \n5.Account Details \n 6.Continue \n 7.LogOut ");
+		System.out.println("Enter Your Choice");
+		Account_Details ad=new Account_Details();
+		int choice=sc.nextInt();
+		switch(choice)
+		{
+		case 1:
+		
+//		    System.out.println("Enter your name");
+//		    name=sc.next();
+//		    System.out.println("Enter your gender");
+//		    gender=sc.next();
+//		    System.out.println("Enter Your mobileno");
+//		    mobileno=sc.next();
+//		    System.out.println("Enter Your emailid");
+//		    emailid=sc.next();
+//		    System.out.println("Enter Your branch");
+//		    branch=sc.next();
+//		    System.out.println("Enter your pincode");
+//		    pincode=sc.next();
+//		    System.out.println("Enter your Amount to  deposite");
+//		    amount=sc.nextInt();
+//		    Account_Details ad=new Account_Details(name,gender,mobileno,emailid,branch,pincode,amount);
+			System.out.println("Enter your name");
+			ad.setName(sc.next());
+			System.out.println("Enter your gender");
+		    ad.setGender(sc.next());
+		    break;
+		case 2:
+			System.out.println("Enter the account number");
+			deleteaccno=sc.nextInt();
+			deleteaccount(deleteaccno);
+			System.out.println("Account number deleted successfully.");
+		case 4:
+			printAccount_Details();
+		    break;
+		
+		case 6:
+			break;
+		case 7:
+			System.out.println("Logout Successfully");
+			check=false;
+			Bank.display();
+			
+			break;
+		
+		}}
+}
+else {
+	System.out.println("Create an account");
+	Bank.display();
+}
+	}
+public static void deleteaccount(int deleteaccno) {
+	mapaccount.remove(deleteaccno);
+	
+}
+public static void printAccount_Details() {
+	for(Map.Entry<Integer,Account_Details> entry:mapaccount.entrySet())
+		
+	{
+	Account_Details ad=entry.getValue();
+		
+		System.out.println("Name :"+ad.getName());
+		System.out.println("Gender: "+ad.getGender());
+//		System.out.println("Mobile No: "+ad.mobileno);
+//		System.out.println("Email Id: "+ad.emailid);
+//		System.out.println("Branch :"+ad.branch);
+//		System.out.println("Pincode :"+ad.pincode);
+//	    System.out.println("Balance Amount : "+ad.amount);
+	}
+	
+}
+public static void createaccount(Account_Details ad) {
+	
+	mapaccount.put(Account_Details.getUser_accno(), ad);
+}
+
+
+}
+

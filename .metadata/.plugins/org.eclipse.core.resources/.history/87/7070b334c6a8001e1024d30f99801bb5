@@ -1,0 +1,165 @@
+package graphMatrix;
+import java.util.*;
+
+import graphList.graphNode;
+
+public class graph {
+	ArrayList<graphNode> node=new ArrayList<>();
+	int[][] adject;
+	public graph(ArrayList<graphNode> node)
+	{
+		for(graphNode gn:node)
+		{
+			this.node.add(gn);
+			adject=new int[node.size()][node.size()];
+		
+		}
+	}
+public void print()
+{
+	StringBuilder s=new StringBuilder();
+	s.append("    ");
+	for(graphNode gn:node)
+	{
+		s.append(gn.name+" ");
+		
+	}
+	s.append("\n");
+	for(graphNode gn:node)
+	{
+		s.append(gn.name+" : ");
+		for(int h:adject[gn.index])
+			
+		{
+			s.append(h+" ");
+		}
+		s.append("\n");
+	}
+	System.out.print(s.toString());
+}
+public void addDirection(int i,int j)
+
+{
+	adject[i][j]=1;
+	adject[j][i]=1;
+	}
+public void bfs()
+{
+	for(graphNode g:node)
+	{
+		if(!g.isVisited)
+		{
+			bfsvisit(g);
+		}
+	}
+}
+public void bfsvisit(graphNode g)
+{
+	Queue<graphNode> queue=new LinkedList<>();
+	queue.add(g);
+
+	while(!queue.isEmpty())
+	{
+		graphNode temp=queue.remove();
+		temp.isVisited=true;
+		System.out.print(temp.name+" ");
+		ArrayList<graphNode> neighbor=getneighbor(g);
+		for(graphNode u:neighbor)
+		{
+			if(!u.isVisited)
+			{
+				
+			queue.add(u);
+			u.isVisited=true;
+			}
+		}
+	}
+}
+public ArrayList<graphNode> getneighbor(graphNode g)
+{
+	ArrayList<graphNode> neighbour=new ArrayList<>();
+	
+	for(int i=0;i<adject.length;i++)
+	{
+		if(adject[g.index][i]==1)
+		{
+		
+				
+				neighbour.add(node.get(i));
+				
+			
+		}
+	}
+	return neighbour;
+}
+public void dfs()
+{
+	for(graphNode g:node)
+	{
+		if(!g.isVisited)
+		{
+			dfsvisit(g);
+		}
+	}
+	
+}
+public void dfsvisit(graphNode g)
+{
+	Stack<graphNode> stack=new Stack<>();
+	stack.push(g);
+
+	while(!stack.isEmpty())
+	{
+		graphNode temp=stack.pop();
+		temp.isVisited=true;
+		System.out.print(temp.name+" ");
+		ArrayList<graphNode> neighbor=getneighbor(temp);
+		for(graphNode u:neighbor)
+		{
+			if(!u.isVisited)
+			{
+				
+			stack.push(u);
+			u.isVisited=true;
+			}
+		}
+	}
+}
+public void topologicalSort()
+{
+	Stack<graphNode> stack=new Stack<>();
+	for(graphNode gN:node)
+	{
+		if(!gN.isVisited)
+		{
+			topologicalVisit(gN,stack);
+		}
+	}
+	while(!stack.isEmpty())
+	{
+		System.out.print 	(stack.pop().name+" ");
+	}
+}
+public void topologicalVisit(graphNode TVnode,Stack<graphNode> stack)
+{
+	
+	for(graphNode temp:TVnode.neighour)
+{
+if(!temp.isVisited)
+{
+topologicalVisit(temp,stack);	
+}
+}
+	
+stack.push(TVnode);
+TVnode.isVisited=true;
+}
+public void addDirection(int i,int j)
+{
+	graphNode first=node.get(i);
+	graphNode second=node.get(j);
+	first.neighour.add(second);
+}
+
+}
+

@@ -1,0 +1,7 @@
+
+public class Admin {
+    public static void login(String admin_id,String admin_password)
+    {
+    	
+    }
+}

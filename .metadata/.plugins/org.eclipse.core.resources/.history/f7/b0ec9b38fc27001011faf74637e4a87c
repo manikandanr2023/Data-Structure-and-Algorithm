@@ -1,0 +1,38 @@
+package problem;
+import java.util.*;
+public class problem {
+
+	public static void main(String[] args)
+	{
+		int[] nums= {5,2,1,2,5,1,2,5};
+		ss sc=new ss();
+		
+		System.out.println(sc.maximumUniqueSubarray(nums));
+	}
+}
+class ss {
+    public int maximumUniqueSubarray(int[] nums) {
+    	 int start =0;
+         int result=0;
+         int sum=0;
+         HashMap<Integer,Integer> map = new HashMap<>();
+         for(int end =0 ;end<nums.length;end++)
+         {
+          if(!map.containsKey(nums[end]))
+          {
+              map.put(nums[end],end);
+              sum+=nums[end];
+          }
+          else{
+              while(nums[start]!=nums[end])
+              {
+                  sum-=map.remove(nums[start]);
+                  start++;
+              }
+          }
+          map.put(nums[end],end);
+          result=Math.max(result,sum);
+         }
+         return result;
+    }
+}

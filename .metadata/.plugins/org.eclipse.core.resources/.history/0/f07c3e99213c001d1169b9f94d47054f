@@ -1,0 +1,37 @@
+
+public class Account_Details {
+	private static int user_accno=0;
+	private int amount;
+	private static String name;
+	private static String gender;
+	private String mobileno;
+	private String emailid;
+	private String branch;
+	private String pincode;
+	
+	public void setName(String name)
+	{
+		Account_Details.name = name;
+	
+	}
+	public void setGender(String gender)
+	{
+		Account_Details.gender=gender;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public String getGender()
+	{
+		return gender;
+	}
+	public static int getUser_accno() {
+		return user_accno;
+	}
+	public static void setUser_accno(int user_accno) {
+		Account_Details.user_accno = user_accno+1;
+	}
+
+}
+

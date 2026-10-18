@@ -1,0 +1,99 @@
+import java.util.*;
+abstract class Bank {
+ static String accno,pin,name,mob,aadhaar,branch,emailid,gender,pincode;
+static String admin,user;
+static int admin_id=0,admin_password=2354;
+static String admin_name,admin_age,admin_gender,admin_mobno,admin_branch,admin_mail;
+static Map<Integer,Create_admin_details> store_admin_details=new HashMap<>();
+	public static void main(String args[])
+	{
+		display();
+	}
+	public static void display() {
+		Scanner sc=new Scanner(System.in);
+	  System.out.println("Welcome to Zoho Bank");
+	 
+	  System.out.println("Choose  Your Option \n 1.Admin\n 2.User");
+	  
+		
+			 int welcome=sc.nextInt();
+	  int sisu;
+       if(welcome>2)
+       {
+    	   display();
+       }
+	  switch(welcome)
+	  {
+	  
+	  
+	  case 1:
+		  System.out.println("1.Signin \n 2.Signup");
+		  sisu=sc.nextInt();
+		  if(sisu==1)
+		  {
+			  System.out.println("Enter your Id");
+			  admin_id=sc.nextInt();
+			  System.out.println("Enter your Password");
+			  admin_password=sc.nextInt();
+			  Admin.login(admin_id, admin_password);
+		  }
+		  if(sisu==2)
+		  { admin_id+=10;
+		  admin_password+=45;
+			  System.out.println("Enter your Name");
+			  admin_name=sc.next();
+			  System.out.println("Enter Your age");
+			  admin_age=sc.next();
+			  System.out.println("Enter Your gender");
+			  admin_gender=sc.next();
+			  System.out.println("Enter Your mail");
+			  admin_mail=sc.next();
+			  System.out.println("Enter your mobile No");
+			  admin_mobno=sc.next();
+			  System.out.println("Enter your Branch");
+			  admin_branch=sc.next();
+			  create_admin(admin_id,admin_password,admin_name,admin_age,admin_gender,admin_mail,admin_mobno,admin_branch);
+			 
+		  }
+		  if(sisu>2)
+		  {
+			  display();
+		  }
+		  
+	 
+	  }
+	
+	  
+	}
+  public static void create_admin(int admin_id,int admin_password,String admin_name,String admin_age,String admin_gender,String admin_mail,String admin_mobno,String admin_branch) {
+		store_admin_details.put(admin_id,new Create_admin_details(admin_id,admin_password,admin_name,admin_age,admin_gender,admin_mail,admin_mobno,admin_branch));
+		Create_admin_details cda=store_admin_details.get(admin_id);
+		System.out.println("Admin id:"+cda.getAdmin_id());
+		System.out.println("Admin password: "+cda.getAdmin_password());
+		System.out.println("Admin Created Successfully");
+		System.out.println("Login");
+		boolean choice=true;
+		while(choice)
+		{
+		try {
+		System.out.println("Enter admin_id");
+		Scanner sc =new Scanner(System.in);
+		admin_id=sc.nextInt();
+		System.out.println("Enter admin_password");
+		admin_password=sc.nextInt();
+	    Admin.login(admin_id, admin_password);
+	    choice=false;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Enter the Input in Integer");
+			choice=true;
+			
+		}}
+		
+		
+		
+	}
+
+
+}

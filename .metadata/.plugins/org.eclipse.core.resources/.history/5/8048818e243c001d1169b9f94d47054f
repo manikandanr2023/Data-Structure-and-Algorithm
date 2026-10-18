@@ -1,0 +1,88 @@
+
+public class Account_Details {
+	private  static int user_accno=1;
+	private static int amount;
+	
+	private static String name;
+	private static String gender;
+	private static String mobileno;
+	private static String emailid;
+	private static String branch;
+	private static String pincode;
+	private static int deposite;
+	public void setDeposite(int deposite)
+	{
+		Account_Details.deposite=deposite;
+	}
+	public int getDeposite()
+	{
+		return deposite;
+	}
+	public void setPincode(String pincode)
+	{
+		Account_Details.pincode=pincode;
+	}
+	public String getPincode()
+	{
+		return pincode;
+	}
+	public void setBranch(String branch)
+	{
+		Account_Details.branch=branch;
+	}
+	public String getBranch()
+	{
+		return branch;
+	}
+	public void setEmailid(String emailid)
+	
+	{
+		Account_Details.emailid=emailid;
+	}
+	public String getEmailid()
+	{
+		return emailid;
+	}
+	public void setMobileno(String mobileno)
+	{
+		Account_Details.mobileno=mobileno;
+	}
+	public String getMobileno()
+	{
+		return mobileno;
+	}
+	public void setName(String name)
+	{
+		Account_Details.name = name;
+	
+	}
+	public void setGender(String gender)
+	{
+		Account_Details.gender=gender;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public  String getGender()
+	{
+		return gender;
+	}
+	
+	public  void setUser_accno(int user_accno) {
+		Account_Details.user_accno = user_accno+1;
+	}
+	public  int getUser_accno() {
+		return user_accno;
+	}
+	public void setAmount(int amount)
+	{
+		Account_Details.amount=amount;
+	}
+   public int getAmount()
+   {
+	   return amount;
+   }
+
+}
+

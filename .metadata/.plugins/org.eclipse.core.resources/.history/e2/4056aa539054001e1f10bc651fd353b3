@@ -1,0 +1,23 @@
+package round5;
+import java.util.*;
+import java.util.Map.Entry;
+public class combination {
+	public static void main(String args[])
+	{
+	
+	String s="an Apple";
+	Map<Character,Integer> map=new HashMap<>();
+	for(int i=0;i<s.length();i++)
+	{
+		map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0)+1);
+	}
+	for(Map.Entry<Character,Integer> hm:map.entrySet())
+	{
+		if(hm.getValue()>=65&&hm.getValue()<=90)
+		{
+			System.out.println((int)hm.getValue());
+		}
+	}
+	System.out.println(map);
+	}
+}

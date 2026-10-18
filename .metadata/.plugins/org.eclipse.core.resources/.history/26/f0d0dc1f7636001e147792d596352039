@@ -1,0 +1,46 @@
+import java.util.*;
+
+
+public class Link {
+	public static void main(String[] args)
+	
+	
+	{
+	Solution s=new Solution();
+	              
+	Scanner sc=new Scanner(System.in);	
+	int[] str= {3,2,2,3};
+	System.out.println(s.strStr("hello","ll"));
+    }
+}
+class Solution {
+    public int strStr(String haystack, String needle) {
+        int j=0;
+    int min=0;
+    boolean statement=false;
+        for(int i=0;i<haystack.length();i++)
+        {
+            if(haystack.charAt(i)==needle.charAt(j))
+            {
+                j++;
+            }
+            else{
+                j=0;
+            }
+            if(j==needle.length())
+            {
+
+            	min=Math.min(min,i-needle.length()+1);
+            	System.out.print(i-needle.length()+1);
+                j=0;
+                statement=true;
+            }
+        }
+        if(statement==true)
+        {
+        	
+        	return min;
+        }
+        return -1;
+    }
+}

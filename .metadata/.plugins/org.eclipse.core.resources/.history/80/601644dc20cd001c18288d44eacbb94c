@@ -1,0 +1,50 @@
+package hello;
+import java.util.*;
+public class Main{
+	public static void main(String[] args)
+	{Scanner sc=new Scanner(System.in);
+	 int size=sc.nextInt();
+	 int[] arr=new int[size];
+	 for(int i=0;i<size;i++)
+	 {
+		 arr[i]=sc.nextInt();
+	 }
+	 Solution s=new Solution();
+	 s.a(arr);
+	}
+}
+
+class Solution
+{
+ public void a(int[] arr)
+ { 
+ int size1=arr.length;
+ int[] store=new int[arr.length];
+ int sum;
+ int z=0;
+	 for(int i:arr)
+		 
+	 {
+		 sum=1;
+		 int j=0;
+		 
+		 while(j<arr.length)
+		 {
+			 if(arr[j]!=i)
+		 {
+			 sum*=arr[j];
+		 }
+			 j++;
+		 }
+		 store[z]=sum;
+		 z++;
+		 System.out.println(z);
+
+		}
+	 for(int h:store)
+	 {
+		 System.out.println(h);
+	 }
+	
+ }
+}

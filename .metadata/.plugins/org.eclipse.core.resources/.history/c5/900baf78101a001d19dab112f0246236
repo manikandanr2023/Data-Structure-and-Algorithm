@@ -1,0 +1,39 @@
+import java.util.*;
+public class Main {
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		List<Integer> li1=new LinkedList<>();
+		List<Integer> li2=new LinkedList<>();
+		li1.add(2);
+		li1.add(4);
+		li1.add(5);
+		li1.add(0);
+		li2.add(5);
+		li2.add(0);
+		li2.add(4);
+		li2.add(2);
+		List<Integer> li3=new LinkedList<>();
+		Stack<Integer> stack=new Stack<>();
+		while(!li1.isEmpty())
+		{
+			stack.push(li1.remove(0));
+			while(stack.peek()==li2.get(0))
+			{
+				li3.add(stack.pop());
+				li2.remove(0);
+			}
+			else {
+				continue;
+			}
+		}
+		System.out.println(li3);
+		System.out.println(li2);
+		System.out.println(li1);
+		System.out.println(stack);
+	
+		
+		
+		
+    }
+}

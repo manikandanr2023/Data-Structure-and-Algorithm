@@ -1,0 +1,57 @@
+
+public class Create_admin_details {
+	private String admin_name,admin_age,admin_gender,admin_mail,admin_mobno,admin_branch;
+	static int admin_id=0,admin_password=10;
+public void setAdmin_name(String admin_name)
+{
+	this.admin_name=admin_name;
+	
+}
+public void setAdmin_age(String admin_age)
+{
+	this.admin_age=admin_age;
+}
+public void setAdmin_gender(String admin_gender)
+{
+	this.admin_gender=admin_gender;
+}
+public void setAdmin_mail(String admin_mail)
+{
+	this.admin_mail=admin_mail;
+}
+public void setAdmin_mobno(String admin_mobno)
+{
+	this.admin_mobno=admin_mobno;
+}
+public void setBranch(String admin_branch)
+{
+	this.admin_branch=admin_branch;
+}
+public String getAdmin_name()
+{
+	return admin_name;
+	
+}
+public String getAdmin_age()
+{
+	return admin_age;
+}
+public String getAdmin_gender()
+{
+	return admin_gender;
+}
+public String getAdmin_mail()
+{
+	return admin_mail;
+}
+public String getAdmin_mobno()
+{
+	return admin_mobno;
+}
+public String getBranch()
+{
+	return admin_branch;
+}
+
+
+}

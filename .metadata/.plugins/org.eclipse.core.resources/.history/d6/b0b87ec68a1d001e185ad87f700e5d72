@@ -1,0 +1,40 @@
+import java.util.*;
+
+
+public class Link {
+	public static void main(String[] args)
+	
+	
+	{ String[] strings={"bbcb", "abccc", "abc"};
+		int count = 0;
+    int n = strings.length;
+
+    for (int i = 1; i < n; i++) {
+        HashMap<Character, Integer> freqMap = new HashMap<>();
+        int oddFreqCount = 0;
+
+        // Count the frequency of characters in the current string
+        for (char ch : strings[i].toCharArray()) {
+            freqMap.put(ch, freqMap.getOrDefault(ch, 0) + 1);
+        }
+
+        // Find the number of characters with odd and even frequencies
+        for (char ch : freqMap.keySet()) {
+            int freq = freqMap.get(ch);
+            if (freq % 2 != 0) {
+                oddFreqCount++;
+            }
+        }
+
+        int evenFreqCount = strings[i].length() - oddFreqCount;
+
+        // Check if the string formed by concatenating string at index i
+        // with string at index j is beautiful
+        if (oddFreqCount <= 1) {
+            count += i - evenFreqCount;
+        }
+    }
+
+   System.out.println(count);
+	}
+}

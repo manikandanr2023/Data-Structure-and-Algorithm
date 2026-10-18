@@ -1,0 +1,35 @@
+import java.util.*;
+public class Bank {
+static String accno,pin,name,mob,aadhaar,branch,emailid,gender,pincode;
+static String admin,user;
+static String admin_id,admin_password;
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+	  System.out.println("Welcome to Zoho Bank");
+	  System.out.println("Choose  Your Option \n 1.Admin\n 2.User");
+	  int welcome=sc.nextInt();
+	 
+	  switch(welcome)
+	  {
+	  case 1:
+		  System.out.println("Enter your Id");
+		  admin_id=sc.next();
+		  System.out.println("Enter your Password");
+		  admin_password=sc.next();
+		  Admin.login(admin_id,admin_password);
+		  break;
+	  case 2:
+		  System.out.println("Enter your Account number");
+		  accno=sc.next();
+		  System.out.println("Enter your pin");
+		  pin=sc.next();
+		  User.login(accno, pin);
+		break;
+
+	  }
+	
+	  
+	}
+
+}

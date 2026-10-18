@@ -1,0 +1,44 @@
+import java.util.*;
+
+
+public class Link {
+	public static void main(String[] args)
+	
+	
+	{
+	Solution s=new Solution();
+	String a="(){}[]";
+	System.out.println(s.lengthOfLongestSubstring(a));
+    }
+}
+class Solution {
+    public boolean lengthOfLongestSubstring(String input) {
+    	 if(input.length()==1)
+         {
+             return false;
+
+         }
+         Stack<Character> charStack=new Stack<Character>();
+       for(int i=0;i<input.length();i++)
+       {
+           if(input.charAt(i)=='('||input.charAt(i)=='{'||input.charAt(i)=='[')
+           {
+               charStack.push(input.charAt(i));
+           }
+           else if(charStack.size()>0){
+               
+               char peek=charStack.peek();
+               if(input.charAt(i)==')'&&peek=='('||input.charAt(i)=='}'&&peek=='{'||
+               input.charAt(i)==']'&&peek=='[')
+               {
+                   charStack.pop();
+               }
+               else{
+                   return false;
+               }
+           }
+   
+       }
+   return true;
+}
+}

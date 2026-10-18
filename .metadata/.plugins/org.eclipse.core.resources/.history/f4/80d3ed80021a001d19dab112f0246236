@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main {
+	public static void main(String args[])
+	{
+		List<Character> li1=new ArrayList<>(Arrays.asList('R','A','C','E','C','A','R'));
+		List<Character> li2=new ArrayList<>();
+		for(int i=li1.size()-1;i>=0;i--)
+		{
+			li2.add(li2.remove(i));
+		}
+		if(li1.equals(li2))
+		{
+			System.out.println("True");
+		}
+		else {
+			System.out.println("False");
+		}
+	}
+
+}

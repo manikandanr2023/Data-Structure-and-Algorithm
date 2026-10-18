@@ -1,0 +1,26 @@
+
+public class Account_Details {
+	static int user_accno=0;
+	int amount;
+	String name;
+	String gender;
+	String mobileno;
+	String emailid;
+	String branch;
+	String pincode;
+	
+	public Account_Details(String name,String gender,String mobileno,String emailid,String branch,String pincode,int amount)
+{
+		this.user_accno=user_accno+1;
+		this.name=name;
+		this.gender=gender;
+		this.mobileno=mobileno;
+		this.emailid=emailid;
+		this.branch=branch;
+		this.pincode=pincode;
+		this.amount=amount;
+	
+}
+
+}
+

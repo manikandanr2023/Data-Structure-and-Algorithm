@@ -1,0 +1,28 @@
+import java.util.*;
+
+
+public class Link {
+	public static void main(String[] args)
+	{String s="Hello World ";
+	s.trim();
+		Stack<String> stack=new Stack<>();
+	     String t="";
+	     int n=0;
+	        for(char a:s.toCharArray())
+	        {
+	        if(a==' '||n==s.length()-1)
+	        {
+	        	t+=s.charAt(s.length()-1);
+	          stack.push(t);
+	          t="";
+	          n+=1;
+	        }
+	        else{
+	          t+=a;
+	          n+=1;
+	        }
+	        }
+	        System.out.println(stack);
+	        System.out.println(s.length());
+	}
+}

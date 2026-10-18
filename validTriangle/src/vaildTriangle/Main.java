@@ -1,0 +1,19 @@
+package vaildTriangle;
+import java.util.*;
+public class Main{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		ArrayList<Integer> list=new ArrayList<>(Arrays.asList(2,2));
+		
+		while(list.size()!=1)
+		{
+			Collections.sort(list,Collections.reverseOrder());
+			int a=list.remove(0)-list.remove(0);
+			
+			list.add(a);
+		}
+		System.out.println(list);
+		
+	}
+}

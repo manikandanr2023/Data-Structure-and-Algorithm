@@ -1,0 +1,4 @@
+
+public class AccountDetails extends Account_Details {
+
+}

@@ -1,0 +1,42 @@
+import java.util.*;
+
+
+public class Link {
+	public static void main(String[] args)
+	
+	
+	{
+	Solution s=new Solution();
+	              
+	Scanner sc=new Scanner(System.in);	
+	int[] str= {-1,0,1,2,-1,4};
+	System.out.println(s.countAndSay(4));
+    }
+}
+
+class Solution {
+    public String countAndSay(int n) {
+       List<String> list=new ArrayList<>();
+       list.add("1");
+       int i=1;
+       while(i<n)
+       {Map<Character,Integer> map=new LinkedHashMap<>();
+    	   String lastSize=list.get(list.size()-1);
+    	   for(int j=0;j<lastSize.length();j++)
+    	   {
+    		   map.put(lastSize.charAt(j), map.getOrDefault(map.get(lastSize.charAt(j)),0)+1);
+    	   }
+    	   String str="";
+    	   for(Map.Entry<Character,Integer> e:map.entrySet())
+    	   {
+    		str+=((int)e.getValue()-'0')+(char)e.getKey();   
+    		System.out.println(e.getValue()+" "+e.getKey());
+    	   }
+    	   System.out.println("*********");
+    	   list.add(str);
+    	   i+=1;
+       }
+       System.out.println(list);
+       return "a";
+    }
+}

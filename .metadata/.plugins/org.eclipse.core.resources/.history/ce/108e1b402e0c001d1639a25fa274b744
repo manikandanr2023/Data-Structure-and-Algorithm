@@ -1,0 +1,57 @@
+import java.util.*;
+public class manikandan {
+	
+	public static void main(String[] args)
+		{
+			Scanner sc=new Scanner(System.in);
+			int len=sc.nextInt();
+			
+			int[] arr1=new int[len];
+			for(int i=0;i<len;i++)
+			{
+				arr1[i]=sc.nextInt();
+			}
+			for(int i=1;i<=len;i++)
+			{
+				subset(0,0,i,arr1);
+			}
+		}
+	public static void subset(int start,int index,int num,int[] arr1)
+	{
+	 if(index-start==num)
+	 {
+		 if(num==1)
+		 {
+			 for(int i=0;i<arr1.length;i++)
+			 {
+				 System.out.println(arr1[i]);
+			 }
+		 }
+		 else {
+			 for(int j=index;j<arr1.length;j++)
+			 {
+				 for(int i=start;i<index;i++)
+				 {
+					 System.out.print(arr1[i]);
+				 }
+				 System.out.print(arr1[j]);
+				 System.out.println();
+			 }
+			 if(start!=num)
+			 {
+				 subset(start+1,start+1,num,arr1);
+			 }
+			 
+		 }
+		 
+	 }
+	 else {
+		 subset(start,index+1,num,arr1);
+	 }
+	}
+	
+	
+	
+	
+	}
+

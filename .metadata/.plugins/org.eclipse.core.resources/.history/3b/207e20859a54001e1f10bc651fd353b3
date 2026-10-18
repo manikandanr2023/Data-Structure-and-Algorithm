@@ -1,0 +1,69 @@
+package round5;
+import java.util.*;
+import java.util.Map.Entry;
+public class combination {
+	public static void main(String args[])
+	{
+	int max=0,min=1;
+	String s="a*wonder*!";
+	boolean bool=true;
+	Map<Character,Integer> map=new LinkedHashMap<>();
+	for(int i=0;i<s.length();i++)
+	{
+		map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0)+1);
+	}
+	for(Map.Entry<Character,Integer> hm:map.entrySet())
+	{
+		max=Math.max(max, hm.getValue());
+		min=Math.min(min,hm.getValue());
+		if(hm.getKey()>=65&&hm.getKey()<=90)
+		{
+			
+			if(map.containsKey((char)(hm.getKey()+32)))
+			{
+				if(map.get((char)(hm.getKey()+32))==hm.getValue())
+						{
+					System.out.println("");
+					bool=false;
+					
+						}
+			}
+		}
+		
+		if(hm.getKey()>=97&&hm.getKey()<=122)
+		{
+			
+			if(map.containsKey((char)(hm.getKey()-32)))
+			{
+				if(map.get((char)(hm.getKey()-32))==hm.getValue())
+						{
+					System.out.println("");
+					bool=false;
+					
+						}
+			}
+		}
+		
+	}
+
+	if(min==1&&max==1&&bool==true)
+	{
+		System.out.print(s);
+	}
+	else if(max>min&&bool==true) {
+		for(Map.Entry<Character,Integer> hm:map.entrySet())
+		{
+			if(max==hm.getValue())
+			{
+				System.out.println(hm.getKey());
+			}
+		}
+		
+	}
+	
+	
+	
+	
+	
+	}
+}

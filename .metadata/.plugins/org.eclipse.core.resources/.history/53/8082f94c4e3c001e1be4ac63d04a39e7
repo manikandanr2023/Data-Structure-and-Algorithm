@@ -1,0 +1,42 @@
+package solveNQueens;
+import java.util.*;
+public class solveNQueens {
+	public static void main(String[] args)
+	{
+Scanner sc=new Scanner(System.in);
+String value="A1b1C20";
+String total="";
+String intval="";
+String strval="";
+boolean boolval=true;
+int count=0;
+
+for(char a:value.toCharArray())
+{count+=1;
+	if(Character.isLetter(a)&&boolval==true)
+	{
+		strval+=a;
+	}
+	else if(Character.isDigit(a))
+	{
+		intval+=a;
+		boolval=false;
+	}
+	else {
+		
+		System.out.print(strval.repeat(Integer.parseInt(intval)));
+		
+		strval=""+a;
+		intval="";
+		boolval=true;
+	}
+	if(count==value.length())
+	{
+		System.out.print(strval.repeat(Integer.parseInt(intval)));
+	}
+	
+}
+	}
+	
+	
+}

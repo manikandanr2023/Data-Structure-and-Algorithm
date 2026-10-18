@@ -1,0 +1,47 @@
+import java.util.*;
+public class User {
+	static Map<Integer,Account_Details> mapaccount=new HashMap<>();
+	static String name,mobileno,emailid,branch,pincode,gender;
+	static int user_accno=0;
+public static void login(String accno,String pin)
+{Scanner sc=new Scanner(System.in);
+boolean check=true;
+
+while(check)	
+{
+		System.out.println("1.Create Account\n 2.Delete Account \n 3.Update Account \n4.List Account \n5.Account Details \n 6.Continue \n 7.Exit ");
+		System.out.println("Enter Your Choice");
+		int choice=sc.nextInt();
+		switch(choice)
+		{
+		case 1:
+			
+		    System.out.println("Enter your name");
+		    name=sc.next();
+		    System.out.println("Enter your gender");
+		    gender=sc.next();
+		    System.out.println("Enter Your mobileno");
+		    mobileno=sc.next();
+		    System.out.println("Enter Your emailid");
+		    emailid=sc.next();
+		    System.out.println("Enter Your branch");
+		    branch=sc.next();
+		    System.out.println("Enter your pincode");
+		    pincode=sc.next();
+		   Account_Details ad=new Account_Details(name,gender,mobileno,emailid,branch,pincode);
+		   createaccount(ad);
+		    break;	
+		case 4:
+		    break;
+		
+		case 6:
+			break;
+		case 7:
+			check=false;
+			break;
+		
+		}}	
+	}
+
+}
+

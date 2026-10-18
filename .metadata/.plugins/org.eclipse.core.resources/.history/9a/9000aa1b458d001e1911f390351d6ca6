@@ -1,0 +1,22 @@
+package BinaryTreeDrinks;
+
+public class BinaryTree {
+	public static void main(String args[])
+	{
+		TreeNode drinks=new TreeNode("Drinks");
+		TreeNode hot=new TreeNode("Hot");
+		TreeNode cold=new TreeNode("Cold");
+		drinks.addChild(cold);
+		drinks.addChild(hot);
+		TreeNode coffee=new TreeNode("Coffee");
+		TreeNode Tea=new TreeNode("Tea");
+		hot.addChild(coffee);
+		hot.addChild(Tea);
+		TreeNode wine=new TreeNode("Wine");
+		TreeNode beer=new TreeNode("Beer");
+		cold.addChild(wine);
+		cold.addChild(Tea);
+		System.out.println(cold.print(0));
+	}
+
+}

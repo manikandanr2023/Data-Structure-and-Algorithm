@@ -1,0 +1,95 @@
+
+public class Account_Details {
+	private int user_accno;
+	
+	
+	private  String name;
+	private String gender;
+	private String mobileno;
+	private  String emailid;
+	private String branch;
+	private  String pincode;
+	private  int deposite;
+	public   Account_Details (int user_accno,String name,String gender,String mobileno,String emailid,String branch,String pincode,int deposite)
+	{
+		this.user_accno=user_accno;
+		this.name=name;
+		this.gender=gender;
+		this.mobileno=mobileno;
+		this.emailid=emailid;
+		this.branch=branch;
+		this.pincode=pincode;
+		this.deposite=deposite;
+	}
+	public void setDeposite(int deposite)
+	{
+		this.deposite=deposite;
+	}
+	public int getDeposite()
+	{
+		return deposite;
+	}
+	public void setPincode(String pincode)
+	{
+		this.pincode=pincode;
+	}
+	public String getPincode()
+	{
+		return pincode;
+	}
+	public void setBranch(String branch)
+	{
+		this.branch=branch;
+	}
+	public String getBranch()
+	{
+		return branch;
+	}
+	public void setEmailid(String emailid)
+	
+	{
+		this.emailid=emailid;
+	}
+	public String getEmailid()
+	{
+		return emailid;
+	}
+	public void setMobileno(String mobileno)
+	{
+		this.mobileno=mobileno;
+	}
+	public String getMobileno()
+	{
+		return mobileno;
+	}
+	public void setName(String name)
+	{
+		this.name = name;
+	
+	}
+	public void setGender(String gender)
+	{
+		this.gender=gender;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public  String getGender()
+	{
+		return gender;
+	}
+	
+	public  void setUser_accno(int user_accno) {
+		this.user_accno = user_accno;
+
+		
+	}
+	public   int getUser_accno() {
+		return user_accno;
+	}
+
+  
+
+}
+

@@ -1,0 +1,15 @@
+
+public class AccountDetails extends Account_Details {
+	public void Account_Details(int user_accno,String name,String gender,String mobileno,String emailid,String branch,String pincode,int deposite)
+	{
+		this.user_accno=user_accno;
+		this.name=name;
+		this.gender=gender;
+		this.mobileno=mobileno;
+		this.emailid=emailid;
+		this.branch=branch;
+		this.pincode=pincode;
+		this.deposite=deposite;
+	}
+
+}

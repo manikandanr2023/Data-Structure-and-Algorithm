@@ -1,0 +1,30 @@
+package problem;
+import java.util.*;
+public class problem {
+
+	public static void main(String[] args)
+	{
+		int[] nums= {187,470,25,436,538,809,441,167,477,110,275,133,666,345,411,459,490,266,987,965,429,166,809,340,467,318,125,165,809,610,31,585,970,306,42,189,169,743,78,810,70,382,367,490,787,670,476,278,775,673,299,19,893,817,971,458,409,886,434};
+		ss sc=new ss();
+		String ch="()[]{}";
+		System.out.println(sc.isValid(ch));
+	}
+}
+class ss {
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        for(char ch:s.toCharArray())
+        {
+            if(!stack.isEmpty())
+            {
+            if(ch==')'&&stack.peek()=='(') stack.pop();
+            if(ch=='['&&stack.peek()==']') stack.pop();
+            if(ch=='{'&&stack.peek()=='}') stack.pop();
+            }
+            else{
+                if(ch=='('||ch=='['||ch=='{') stack.push(ch);
+            }
+        }
+        return (stack.isEmpty())?true:false;
+    }
+}

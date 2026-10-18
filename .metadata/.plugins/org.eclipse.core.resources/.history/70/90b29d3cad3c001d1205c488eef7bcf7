@@ -1,0 +1,28 @@
+public  class User extends Admin{
+	
+	public static void user_login(int user_accno,int user_password)
+	{
+		if(mapaccount.containsKey(user_accno))
+		{
+			Account_Details ad=mapaccount.get(user_accno);
+			
+			System.out.println("Account Number:"+user_accno);
+			System.out.println("Name :"+ad.getName());
+			System.out.println("Gender: "+ad.getGender());
+			System.out.println("Mobile No: "+ad.getMobileno());
+			System.out.println("Email Id: "+ad.getEmailid());
+			System.out.println("Branch :"+ad.getBranch());
+			System.out.println("Pincode :"+ad.getPincode());
+			System.out.println("Bank Name :"+ad.getBank_name());
+		    System.out.println("Balance Amount : "+ad.getDeposite());
+		    System.out.println("1.Deposite\n2.Withdraw");
+		   
+			int dw=sc.nextInt();
+		    switch(dw)
+		    {
+		    case 
+		    }
+			
+		}
+	}
+}

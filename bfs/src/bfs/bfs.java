@@ -1,0 +1,41 @@
+package bfs;
+
+public class bfs {
+	public static void main(String args[])
+	{
+		int[][] arr= {{1,1,0,0,0},{1,1,0,0,0},{0,0,1,0,0},{0,0,0,1,1}};
+		Solution s=new Solution();
+		s.dfs(arr);
+	}
+	
+
+}
+class Solution{
+	public void dfs(int[][] arr)
+	{
+		int count=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[0].length;j++)
+			{
+				if(arr[i][j]==1)
+				{
+				count++;
+				helper(arr,i,j);
+			}}
+		}
+		System.out.println(count);
+		
+	}
+	public void helper(int[][] arr,int i,int j)
+	{
+		if(i>=0&&i<arr.length&&j>=0&&j<arr[0].length&&arr[i][j]==1)
+		{
+			arr[i][j]=0;
+			helper(arr,i+1,j);
+			helper(arr,i,j+1);
+			helper(arr,i-1,j);
+			helper(arr,i,j-1);
+		}
+	}
+}

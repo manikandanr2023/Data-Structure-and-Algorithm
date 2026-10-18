@@ -1,0 +1,41 @@
+package problem;
+import java.util.*;
+public class problem {
+
+	public static void main(String[] args)
+	{
+		String s="abcabcbb";
+		int k=2;
+		ss sc=new ss();
+		
+		System.out.println(sc.lengthOfLongestSubstring(s));
+	}
+}
+class ss {
+    public int lengthOfLongestSubstring(String s) {
+        int start=0;
+        int end=0;
+        HashMap<Character,Integer> map = new HashMap<>();
+        int max=0;
+        while(end<s.length())
+        {
+            if(!map.containsKey(s.charAt(end)))
+            {
+                map.put(s.charAt(end),end);
+                end++;
+            }
+            else{
+                while(s.charAt(start)!=s.charAt(end))
+                {
+                    map.remove(s.charAt(start));
+                    start++;
+                }
+                map.put(s.charAt(end),end);
+                start++;
+                end++;
+            }
+            max=Math.max(max,map.size());
+        }
+        return max;
+    }
+}
